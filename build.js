@@ -29,6 +29,9 @@ const build = () => {
   copyDirectory(publicPath, path.join(distPath, 'public'));
   copyDirectory(viewsPath, path.join(distPath, 'views'));
 
+  // Copiar archivo principal app.js
+  fs.copyFileSync(path.join(__dirname, 'app.js'), path.join(distPath, 'app.js'));
+
   console.log('Build completado.');
 };
 

@@ -4,9 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "build": "npm run clean && npm run copy",
-    "clean": "rm -rf dist",
-    "copy": "copyfiles -u 1 public/**/* views/**/* dist/"
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",
