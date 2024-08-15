@@ -1,8 +1,11 @@
 [build]
-  functions = "src/functions"
-  publish = "public"
+  command = "npm run build"       # Comando para construir tu proyecto
+  publish = "public"              # Directorio donde se encuentran los archivos estáticos para publicar
+  functions = "src/functions"     # Directorio donde se encuentran las funciones serverless
 
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+[functions]
+  node_bundler = "esbuild"        # Usa esbuild para empaquetar funciones serverless (opcional)
+
+[dev]
+  command = "npm start"           # Comando para iniciar el servidor localmente durante el desarrollo
+  port = 8888                     # Puerto para el servidor local
